@@ -1,0 +1,2 @@
+# gdprscreen
+sample gdpr screen
