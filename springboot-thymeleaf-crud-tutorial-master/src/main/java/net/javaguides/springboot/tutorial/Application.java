@@ -30,5 +30,5 @@ public class Application {
 		viewResolver.setTemplateEngine(engine);
 		return viewResolver;
 	}
-	
+
 }

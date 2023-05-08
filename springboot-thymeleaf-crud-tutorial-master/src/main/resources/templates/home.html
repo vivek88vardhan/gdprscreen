@@ -9,10 +9,10 @@
     <title>Artha Data Solutions</title>
 
 
-    <link type="text/css" href="css/bootstrap.css"  rel="stylesheet" >
-    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" >
-    <link type="text/css" href="css/custom.css"  rel="stylesheet" >
-    <link type="text/css" href="css/custom.min.css"  rel="stylesheet" >
+    <link th:href="@{/css/bootstrap.css}"  rel="stylesheet" >
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" >
+    <link th:href="@{/css/custom.css}"  rel="stylesheet" >
+    <link th:href="@{/css/custom.min.css}"  rel="stylesheet" >
 
     <script src="js/google-analytics.js.download"></script>
 </head>
@@ -24,23 +24,12 @@
     <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="http://www.bookwatertanker.com/" class="navbar-brand">Artha Data Solutions</a>
+                <a href="http://localhost:8080/employees/list" class="navbar-brand">Artha Data Solutions</a>
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                     <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                 </button>
             </div>
-            <div class="navbar-collapse collapse" id="navbar-main">
-                <ul class="nav navbar-nav">
 
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li></li>
-                    <li><a href="http://www.bookwatertanker.com/registration">Register</a></li>
-                    <li>
-                        <a href="http://www.bookwatertanker.com/login">Login</a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
 
@@ -49,8 +38,8 @@
     <div class="container">
 
         <div class="page-header" id="banner">
-            <h3>Employee Portal - Know your PII Info</h3>
-            <p class="lead">Below is form to update employee information and request his PII information.</p>
+            <h3>Employee Portal</h3>
+            <p class="lead">Below is form to update employee information.</p>
             <div class="row">
                 <div class="col-md-4 order-md-2 mb-4">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -76,6 +65,12 @@
                                 <small class="text-muted">9375 E Shea Blvd, Scottsdale, AZ</small>
                             </div>
                         </li>
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">Request my PII</h6>
+                                <a href="http://localhost:8080/employees/pii"><span class="blue">Click Here</span></a>
+                            </div>
+                        </li>
                     </ul>
 
 
@@ -88,24 +83,57 @@
                                 <label for="firstName">First name</label>
                                 <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
                                 <div class="invalid-feedback">
-                                    Valid first name is required.
+                                    Valid first name is required
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="lastName">Last name</label>
                                 <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
                                 <div class="invalid-feedback">
-                                    Valid last name is required.
+                                    Valid last name is required
                                 </div>
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">DOB</label>
+                                <input type="text" class="form-control" id="dob" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Date of Birth ( yyyy-MM-dd) format
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName">SSN</label>
+                                <input type="text" class="form-control" id="SSN" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Provide your social security number [ XXX-XX-XXXX format]
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">Primary Phone</label>
+                                <input type="text" class="form-control" id="pPhone" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Phone format [ (XXX) XXX-XXXX ] [ (area code) number ]
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName">Secondary Phone</label>
+                                <input type="text" class="form-control" id="sPhone" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Phone format [ (XXX) XXX-XXXX ] [ (area code) number ]
+                                </div>
+                            </div>
+                        </div>
 
                         <div class="mb-3">
                             <label for="address">Address</label>
                             <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
                             <div class="invalid-feedback">
-                                Please enter your shipping address.
+                                Please enter your primary address
                             </div>
                         </div>
 
@@ -115,15 +143,29 @@
                         </div>
 
                         <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName">State</label>
+                                <input type="text" class="form-control" id="State" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid state to be entered
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName">Zip</label>
+                                <input type="text" class="form-control" id="Zip Code" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid Zip code to be entered
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
 
                             <hr class="mb-4">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="same-address">
-                                <label class="custom-control-label" for="same-address">Right to know my PII information located in our systems.</label>
-                            </div>
+
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="save-info">
-                                <label class="custom-control-label" for="save-info">I Agree to get my info.</label>
+                                <label class="custom-control-label" for="save-info">I Agree that all my information mentioned above is valid.</label>
                             </div>
 
                             <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>

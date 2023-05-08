@@ -36,6 +36,11 @@ public class EmployeeController {
         return "home";
     }
 
+    @GetMapping("pii")
+    public String getPII(Employee employee) {
+        return "pii";
+    }
+
     @PostMapping("add")
     public String addEmployee(Employee employee, BindingResult result, Model model) {
         if (result.hasErrors()) {
